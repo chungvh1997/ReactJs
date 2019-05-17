@@ -37,9 +37,8 @@ class Login extends React.Component {
                 var testObject  = {name: user, password: password};
                 localStorage.setItem('testObject', JSON.stringify(testObject));
                 // var retrievedObject = localStorage.getItem('testObject');
-                const index = this.props.index;
                 // console.log('retrievedObject: ', JSON.parse(retrievedObject));
-               this.props.handleOnBack(index+1);
+               this.props.handleOnEnded();
             }else{
                 this.setState({
                     message: res.message

@@ -7,8 +7,8 @@ import Thele from './components/views/Thele';
 import Gift from './components/views/Gift';
 // import Rate from './components/views/Rate';
 class App extends React.Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
     this.state = ({
       index:0
       
@@ -38,8 +38,23 @@ class App extends React.Component {
   //       return <Login />
   //   }
   // }
+  handleOnEnded = () => {
+    this.setState(prevState => ({
+      index: prevState.index + 1
+    }));
+  };
   handleOnBack = (e) => {
-    switch (e) {
+    const index = e;
+    // if(index === 0){
+    //   this.setState({ index: 1 });
+    // }else if(index === 1){
+    //   this.setState({ index: 2 });
+    // }else{
+    //   this.setState(prevState => ({
+    //     index: prevState.index + 1
+    //   }));
+    // }
+    switch (index) {
       case 0:
         this.setState({ index: 0 });
         break;
@@ -55,25 +70,27 @@ class App extends React.Component {
     }
   };
 
-  render(){
-    const {index}= this.state;
-    console.log(index);
+  renderView = () => {
+    const index= this.state.index;
+    // const props = this.state;
     switch (index) {
        case 0:
-         return <Login handleOnBack={this.handleOnBack} index ={this.state.index} />;
+         return <Login handleOnEnded={this.handleOnEnded} />;
        case 1:
-         return (
-           <Thele handleOnBack={this.handleOnBack}  index ={this.state.index}/>
-         );
+         return (<Thele handleOnEnded={this.handleOnEnded} handleOnBack={this.handleOnBack}/>);
        case 2:
-       return (
-        <Gift handleOnBack={this.handleOnBack} />
-      );
+          return (<Gift handleOnEnded={this.handleOnEnded} />);
        default:
-       return <Login handleOnBack={this.handleOnBack} />;
+         return <Login handleOnBack={this.handleOnBack} />;
      }
-
-
+  }
+  render(){
+    return(
+      <div>
+          {this.renderView()}
+      </div>
+      
+    )
   }
 }
 
