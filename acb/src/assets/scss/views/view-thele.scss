@@ -1,0 +1,55 @@
+.index-thele{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        margin: 0;
+    }
+    .logo {
+        position: relative;
+        top: -70px;
+        img{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+    }
+    .conetnt {
+        position: absolute;
+        top: 17%;
+        width: 68%;
+        left: 50%;
+        transform: translateX(-50%);
+        h1{
+            text-align: center;
+            color: #009FDA;
+        }
+        .box-phanqua{
+            .box-left{
+                width: 40%;
+                text-align: center;
+                float: left;
+                position: relative;
+                img{
+                    width: unset;
+                    height: unset;
+                    position: unset;
+                }
+               
+            }
+            .box-right {
+                width: calc(100% - 40% - 20px);
+                float: left;
+            }
+        }
+    }
+    .swiper-cp{
+        z-index: 999!important;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        
+    }
+}

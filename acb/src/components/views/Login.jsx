@@ -1,14 +1,14 @@
 import React from 'react';
-// import logo from '../../assets/img/login-kv.png';
-// import logo1 from '../../assets/img/chuc-mung.png';
+import logo from '../../assets/img/login-kv.png';
+import logo1 from '../../assets/img/chuc-mung.png';
 import { Button, Form, Input, Alert } from 'reactstrap';
 import User from '../../units/User';
 class Login extends React.Component {
     constructor() {
         super();
         this.state = ({
-            txt_user: "",
-            txt_password: ""
+            txt_user: "wejelly",
+            txt_password: "wejelly"
           
         });
     }
@@ -48,22 +48,24 @@ class Login extends React.Component {
       
     }
     render() {
+        const {txt_user,txt_password} = this.state;
         return (
           
             <div className="index-login">
-{/*              
-                <div className="bg-left">
-                    <img src={logo} alt="" />
-                </div> */}
+             
+                 <div className="bg-left">
+                     <img src={logo} alt="" />
+                 </div>
                 <div className="bg-right">
                     <div className="bao">
-                        {/* <img src={logo1} alt="" /> */}
+                        <img src={logo1} alt="" />
                         <Form >
                             <Input
                                 type="user"
                                 name="txt_user"
                                 className="edit-input"
                                 placeholder="Username"
+                                value={txt_user}
                                 onChange={this.onHandInput}
                             >
                             </Input>
@@ -71,6 +73,7 @@ class Login extends React.Component {
                                 type="password"
                                 name="txt_password"
                                 className="edit-input"
+                                value={txt_password}
                                 placeholder="Password"
                                 onChange={this.onHandInput}
                             >

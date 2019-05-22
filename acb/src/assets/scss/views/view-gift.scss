@@ -1,0 +1,21 @@
+.index-gift{
+    .title.col{
+        text-align: center;
+    }
+    .box-item {
+        width: calc(100% / 5);
+        position: relative;
+        img{
+            width: 80%;
+            height: 300px;
+        }
+        // img:last-child{
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     z-index: 9;
+        //     opacity: 1;
+        // }
+    }
+    
+}
