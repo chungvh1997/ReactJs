@@ -44,11 +44,25 @@ const items = [
         img:boy5_1
     },
 ]
+const quas = [
+    {
+        id : 0,
+        name:"Qua"
+    },
+    {
+        id : 1,
+        name:"Qua 1"
+    },
+    {
+        id : 2,
+        name:"Qua 2"
+    },
+]
 class Gift extends React.Component {
     constructor(){
         super();
         this.state ={
-            boyall: true
+            boyall: false
         }
     }
     componentDidMount() {
@@ -61,6 +75,7 @@ class Gift extends React.Component {
     }
     onStop=(e)=>{
         
+       
         
         
     }
@@ -77,7 +92,9 @@ class Gift extends React.Component {
                     lg={2} 
                     key={index} 
                     className="box-item"
-                    onMouseOver={this.onStop}>
+                    onClick={this.onStop}
+                    >
+                    
                     <img src={items.url} hidden={boy_item}  alt="boy"/>
                     <img src={items.img} hidden={!boy_item}  alt="boy"/>
                 </div>
@@ -94,6 +111,7 @@ class Gift extends React.Component {
                     <Row>
                         {element}
                     </Row>
+                    
                     
                 </Container>
             </div>

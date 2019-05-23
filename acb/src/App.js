@@ -6,12 +6,13 @@ import bg from './assets/img/bg1.jpg';
 
 import Thele from './components/views/Thele';
 import Gift from './components/views/Gift';
-// import Rate from './components/views/Rate';
+import Rate from './components/views/Rate';
+import Loichuc from './components/views/LoiChuc';
 class App extends React.Component {
   constructor(){
     super();
     this.state = ({
-      index:2
+      index:4
       
     });
   }
@@ -32,6 +33,12 @@ class App extends React.Component {
       case 2:
         this.setState({ index: 2 });
         break;
+      case 3:
+        this.setState({ index: 3 });
+        break;
+      case 4:
+        this.setState({ index: 4 });
+        break;
       default:
        this.setState({ index: 0 });
         break;
@@ -47,6 +54,10 @@ class App extends React.Component {
          return (<Thele handleOnEnded={this.handleOnEnded} handleOnBack={this.handleOnBack}/>);
        case 2:
           return (<Gift handleOnEnded={this.handleOnEnded} />);
+       case 3:
+          return (<Loichuc handleOnEnded={this.handleOnEnded} />);
+       case 4:
+          return (<Rate handleOnEnded={this.handleOnEnded} />);
        default:
          return <Login handleOnBack={this.handleOnBack} />;
      }

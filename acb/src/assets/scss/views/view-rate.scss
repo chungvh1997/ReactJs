@@ -1,0 +1,20 @@
+.index-rate {
+    height: 600px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    .bg{
+        height: 100%;
+        img{
+            height: 100%;
+        }
+        .info {
+            width: 60%;
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            height: 350px;
+        }
+    }
+}
