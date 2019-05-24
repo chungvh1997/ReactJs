@@ -38,7 +38,7 @@ const items = [
         img:boy4_1
     },
     {
-        id:5,
+        id:4,
         name: "Boy 4",
         url:boy5,
         img:boy5_1
@@ -65,25 +65,75 @@ class Gift extends React.Component {
             boyall: false
         }
     }
+    
+    
+     
     componentDidMount() {
-        this.replay = setInterval(() => {
-          this.setState(prevState => ({
-            boyall: !prevState.boyall
-          }));
+        this.intervalId =setInterval(() => {
+            this.setState(state => ({
+                boyall: !state.boyall
+            }));
         }, 400);
-      
+          setTimeout(() => { clearInterval(this.intervalId) }, 3000);
     }
-    onStop=(e)=>{
+   
+    onMouseEnter = (e) =>{
+        const index = parseInt(e.target.id) ;
+        switch (index) {
+            case 0:
+                console.log(123);
+                this.intervalId =setInterval(() => {
+                    this.setState(state => ({
+                        boyall: !state.boyall
+                    }));
+                }, 400);
+                break;
+            case 1:
+                this.intervalId =setInterval(() => {
+                    this.setState(state => ({
+                        boyall: !state.boyall
+                    }));
+                }, 400);
+              break;
+            case 2:
+                this.intervalId =setInterval(() => {
+                    this.setState(state => ({
+                        boyall: !state.boyall
+                    }));
+                }, 400);
+              break;
+            case 3:
+                this.intervalId =setInterval(() => {
+                    this.setState(state => ({
+                        boyall: !state.boyall
+                    }));
+                }, 400);
+              break;
+            case 4:
+                this.intervalId =setInterval(() => {
+                    this.setState(state => ({
+                        boyall: !state.boyall
+                    }));
+                }, 400);
+              break;
+            default:
+                // clearInterval(this.intervalId)
+              break;
+          }
         
+        
+    }
+    onMouseLeave = (e) =>{
        
         
-        
+        e.target.src = clearInterval(this.intervalId)
+       this.setState({
+           boyall: false
+       })
     }
-    componentWillUnmount() {
-        clearInterval(this.replay);
+    componentWillUnmount(){
+        clearInterval(this.intervalId);
     }
-
-
     render(){
         const boy_item = this.state.boyall;
         var element = items.map((items,index) => {
@@ -93,6 +143,9 @@ class Gift extends React.Component {
                     key={index} 
                     className="box-item"
                     onClick={this.onStop}
+                    onMouseEnter={this.onMouseEnter}
+                    onMouseLeave={this.onMouseLeave}
+                    id={items.id}
                     >
                     
                     <img src={items.url} hidden={boy_item}  alt="boy"/>

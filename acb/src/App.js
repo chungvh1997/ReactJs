@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = ({
-      index:4
+      index:2
       
     });
   }
